@@ -1,7 +1,8 @@
-library flutter_image_identifier;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'flutter_image_identifier_platform_interface.dart';
+
+class FlutterImageIdentifier {
+  Future<String?> getPlatformVersion() {
+    return FlutterImageIdentifierPlatform.instance.getPlatformVersion();
+  }
 }
