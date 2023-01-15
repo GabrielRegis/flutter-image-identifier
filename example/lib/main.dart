@@ -3,6 +3,8 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_image_identifier/flutter_image_identifier.dart';
+import 'package:flutter_image_identifier_example/features/cnh/screens/cnh_scanner_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +34,8 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await _flutterImageIdentifierPlugin.getPlatformVersion() ?? 'Unknown platform version';
+          await _flutterImageIdentifierPlugin.getPlatformVersion() ??
+              'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -49,13 +52,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+    return const ProviderScope(
+      child: MaterialApp(
+        home: Material(
+          child: CNHScannerScreen(),
         ),
       ),
     );

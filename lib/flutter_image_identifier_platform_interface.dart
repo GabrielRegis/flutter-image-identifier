@@ -1,5 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import 'features/cnh/models/cnh.dart';
 import 'flutter_image_identifier_method_channel.dart';
 
 abstract class FlutterImageIdentifierPlatform extends PlatformInterface {
@@ -8,7 +9,8 @@ abstract class FlutterImageIdentifierPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FlutterImageIdentifierPlatform _instance = MethodChannelFlutterImageIdentifier();
+  static FlutterImageIdentifierPlatform _instance =
+      MethodChannelFlutterImageIdentifier();
 
   /// The default instance of [FlutterImageIdentifierPlatform] to use.
   ///
@@ -25,5 +27,9 @@ abstract class FlutterImageIdentifierPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<CNH?> captureCNHInformationsFromImage(String base64) {
+    throw UnimplementedError();
   }
 }

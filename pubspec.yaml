@@ -8,6 +8,9 @@ environment:
   flutter: ">=2.5.0"
 
 dependencies:
+  camera:
+  widget_mask:
+  animate_do:
   flutter:
     sdk: flutter
   flutter_web_plugins:
@@ -46,9 +49,8 @@ flutter:
         fileName: flutter_image_identifier_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages
